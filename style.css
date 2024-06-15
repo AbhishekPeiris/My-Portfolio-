@@ -63,3 +63,6 @@ nav ul li a:hover::after{
     font-size: 40px;
     color: rgb(100, 100, 100);
 }
+.header-text h1 span{
+    color:#ff004f;
+}
