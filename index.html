@@ -40,31 +40,31 @@
                         <p class="about-me-p">As an undergraduate student pursuing a BSc (Hons) in Information Technology with a specialization in Software Engineering at the Sri Lankan Institute of Information Technology (SLIIT), I have honed my skills across various programming languages through diverse projects. Passionate about continuous learning and growth, I aim to leverage my abilities to make a significant impact in IT field. I am currently seeking an internship opportunity to contribute effectively with further my knowing and skills. </p>
 
                         <div class="tab-titles">
-                            <p class="tab-links active-link">Skills</p>
-                            <p class="tab-links">Experience</p>
-                            <p class="tab-links">Education</p>
-                            <p class="tab-links">Interested In</p>
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                            <p class="tab-links" onclick="opentab('interestedin')">Interested In</p>
                         </div>
-                        <div class="tab-contents active-tab">
+                        <div class="tab-contents active-tab" id="skills">
                             <ul>
                                 <li><span>UI/UX</span><br>Designing Web/App Interfcaes</li>
                                 <li><span>Web Development</span><br>Web App Development</li>
                                 <li><span>App Development</span><br>Building Android Apps</li>
                             </ul>
                         </div>
-                        <div class="tab-contents">
+                        <div class="tab-contents" id="experience">
                             <ul>
                                 <li><span>2022 - Current</span><br>BSc (hons) in information technology specialising in software engineering</li>
                                 <li><span>2024 - Current</span><br>Trainee - Full Stack Developer at UOM ( Online Certificate courses )</li>
                             </ul>
                         </div>
-                        <div class="tab-contents">
+                        <div class="tab-contents" id="education">
                             <ul>
                                 <li><span>2022 - Present</span><br>BSc (hons) in information technology specialising in software engineering<br>Undergraduate  at SLIIT.</li>
                                 <li><span>2011 - 2020</span><br>Niwaththaka Chethiya National School - Anuradhapura</li>
                             </ul>
                         </div>
-                        <div class="tab-contents">
+                        <div class="tab-contents" id="interestedin">
                             <ul>
                                 <li>Software Engineering</li>
                                 <li>Full Stack Engineering</li>
@@ -76,6 +76,25 @@
                 </div>
             </div>
         </div>
+
+
+
+        <script>
+            
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+        </script>
 
     </body>
 </html>
